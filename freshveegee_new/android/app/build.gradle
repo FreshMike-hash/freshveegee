@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dev.flutter.flutter-gradle-plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace = "com.example.freshveegee_new"
+    compileSdk = 34
+    ndkVersion = "23.1.7779620"
+
+    defaultConfig {
+        applicationId = "com.example.freshveegee_new"
+        minSdk = 23
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+
+        // Ensure TensorFlow Lite compatibility
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("C:/Users/April/OneDrive/Desktop/freshveegee/my-release-key.jks")  // Keystore file location
+            storePassword "010101"  // Keystore password
+            keyAlias "my-key-alias"  // Key alias in the keystore
+            keyPassword "010101"  // Key password
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release  // Make sure the release build is signed
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
+
+dependencies {
+    // TensorFlow Lite library
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+    implementation 'org.tensorflow:tensorflow-lite:2.12.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.12.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
+    
+    implementation platform('com.google.firebase:firebase-bom:33.6.0')
+
+    // Firebase SDK dependencies
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-analytics'
+}
+
+flutter {
+    source = "../.."  // Flutter project source directory
+}

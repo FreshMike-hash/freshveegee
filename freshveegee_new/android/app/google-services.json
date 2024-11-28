@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "594718500116",
+    "project_id": "freshveegee",
+    "storage_bucket": "freshveegee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594718500116:android:44bc3b2884f982361b4e01",
+        "android_client_info": {
+          "package_name": "com.example.freshveegee_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQPlZ4c1Zos9ud49KU6tskjoSTDU5KARw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

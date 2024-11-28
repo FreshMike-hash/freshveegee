@@ -1,0 +1,12 @@
+0 stale_tomato
+1 stale_orange
+2 stale_capsicum
+3 stale_bitter_gourd
+4 stale_banana
+5 stale_apple
+6 fresh_tomato
+7 fresh_orange
+8 fresh_capsicum
+9 fresh_bitter_groud
+10 fresh_banana
+11 fresh_apple
